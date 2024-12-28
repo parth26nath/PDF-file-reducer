@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 142 76% 36%;
+    --primary-foreground: 355 100% 97%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 142 76% 36%;
+    --radius: 1rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+    --primary: 142 70% 50%;
+    --primary-foreground: 144.9 80.4% 10%;
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 215 20.2% 65.1%;
+    --muted: 223 47% 11%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+    --ring: 142 70% 50%;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 8s ease infinite;
+  }
+
+  .animate-bounce-slow {
+    animation: bounce 3s ease-in-out infinite;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite;
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    filter: brightness(100%) drop-shadow(0 0 0 rgba(var(--primary), 0));
+  }
+  50% {
+    filter: brightness(120%) drop-shadow(0 0 20px rgba(var(--primary), 0.5));
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.05);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
